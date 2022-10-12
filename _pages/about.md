@@ -12,4 +12,3 @@ Hello, welcome to my homepage. I am a Ph.D. candidate in Electrical and Electron
 
 News
 ------
-1. I have build my personal website!
