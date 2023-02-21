@@ -1,9 +1,9 @@
 ---
-title: "Q-greedyUCB: A new exploration policy to learn resource-efficient scheduling"
+title: "Multi-Agent Deep Reinforcement Learning For Cross-Layer Scheduling in Mobile Ad-hoc Networks"
 collection: publications
-permalink: /publication/2021-06-17-paper-title-number-2
-date: 2021-06-17
+permalink: /publication/2023-02-21-paper-title-number-0
+date: 2023-02-21
 venue: 'China Communications'
 link: 'https://ieeexplore.ieee.org/abstract/document/9459561'
-citation: 'Yu Zhao, Joohyun Lee, Wei Chen. &quot;Q-greedyUCB: A new exploration policy to learn resource-efficient scheduling.&quot; <i>China Communications</i>. vol. 18, no. 6, pp. 12–23, 2021.'
+citation: 'Xinxing Zheng, Yu Zhao, Joohyun Lee, Wei Chen. &quot;Multi-Agent Deep Reinforcement Learning For Cross-Layer Scheduling in Mobile Ad-hoc Networks.&quot; <i>China Communications</i>. Accepted.'
 ---
