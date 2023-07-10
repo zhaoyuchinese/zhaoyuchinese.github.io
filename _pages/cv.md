@@ -9,7 +9,7 @@ redirect_from:
 
 {% include base_path %}
 
-You can download a PDF copy of my CV [here](/files/pdf/ZHAOYU_CV.pdf).
+You can download a PDF copy of my CV [here_english](/files/pdf/ZHAOYU_CV.pdf) or [here_chinese](/files/pdf/ZHAOYU_CV_cn.pdf).
 
 Education
 ======
