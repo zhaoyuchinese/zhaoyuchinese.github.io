@@ -1,9 +1,9 @@
 ---
-title: "Multi-Agent Deep Reinforcement Learning For Cross-Layer Scheduling in Mobile Ad-hoc Networks"
+title: "SOQ: Structural Reinforcement Learning for Constrained Delay Minimization with Channel State Information"
 collection: publications
-permalink: /publication/2023-02-21-paper-title-number-0
-date: 2023-02-21
-venue: 'China Communications'
+permalink: /publication/2023-07-25-paper-title-number
+date: 2023-07-25
+venue: 'IEEE Internet of Things Journal'
 link: 'https://ieeexplore.ieee.org/abstract/document/9459561'
-citation: 'Xinxing Zheng, Yu Zhao, Joohyun Lee, Wei Chen. &quot;Multi-Agent Deep Reinforcement Learning For Cross-Layer Scheduling in Mobile Ad-hoc Networks.&quot; <i>China Communications</i>. Accepted.'
+citation: 'Yu Zhao, Yeongjin Kim, Joohyun Lee. &quot;SOQ: Structural Reinforcement Learning for Constrained Delay Minimization with Channel State Information.&quot; <i>IEEE Internet of Things Journal</i>. Accepted.'
 ---
