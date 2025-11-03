@@ -1,5 +1,5 @@
 ---
-title: "NOMA-based Random Access: Multi-Agent Reinforcement Learning Mehtod"
+title: "NOMA-based Random Access: Multi-Agent Reinforcement Learning Method"
 collection: publications
 permalink: /publication/2023-02-08-paper-title-number-6
 date: 2023-02-08
