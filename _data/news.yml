@@ -1,0 +1,14 @@
+# Add an entry for each news item. GitHub Pages displays the newest dates first.
+# Use YYYY-MM-DD dates. Type sets the icon: acceptance, publication, talk, award, or general.
+# The url and link_label fields are optional. Commit edits to master to publish.
+- date: "2026-10-17"
+  type: publication
+  text: "Our paper on EXP3-MA random access in wireless IoT networks was published in the ICICS 2026 proceedings."
+  url: "https://doi.org/10.1007/978-981-92-6857-3_16"
+  link_label: "Springer"
+
+- date: "2026-07-03"
+  type: publication
+  text: "Our paper on SA-MTP was published in Briefings in Bioinformatics."
+  url: "https://doi.org/10.1093/bib/bbag361"
+  link_label: "Journal article"

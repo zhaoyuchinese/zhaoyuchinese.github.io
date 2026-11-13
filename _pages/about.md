@@ -28,13 +28,29 @@ redirect_from:
   </ul>
 </section>
 
-<section class="academic-section" aria-labelledby="latest-heading">
-  <div class="academic-section-head">
-    <h2 id="latest-heading">Recent publications</h2>
-    <a href="{{ '/publications/' | relative_url }}">All publications <span aria-hidden="true">→</span></a>
-  </div>
-  {% assign papers = site.publications | sort: 'date' | reverse %}
-  {% for paper in papers limit: 3 %}
-    {% include academic-paper.html paper=paper compact=true show_year=true %}
-  {% endfor %}
+<section class="academic-section" aria-labelledby="news-heading">
+  <h2 id="news-heading">News</h2>
+  {% assign news = site.data.news | sort: 'date' | reverse %}
+  {% if news.size > 0 %}
+    <ul class="news-list">
+      {% for item in news %}
+        {% case item.type %}
+          {% when 'acceptance' %}{% assign icon = 'fa-file-alt' %}{% assign tone = 'green' %}
+          {% when 'publication' %}{% assign icon = 'fa-book-open' %}{% assign tone = 'green' %}
+          {% when 'talk' %}{% assign icon = 'fa-microphone' %}{% assign tone = 'blue' %}
+          {% when 'award' %}{% assign icon = 'fa-trophy' %}{% assign tone = 'gold' %}
+          {% else %}{% assign icon = 'fa-bullhorn' %}{% assign tone = 'neutral' %}
+        {% endcase %}
+        <li class="news-item">
+          <span class="news-icon news-icon--{{ tone }}" aria-hidden="true"><i class="fas {{ icon }}"></i></span>
+          <div class="news-item-body">
+            <time datetime="{{ item.date | date: '%Y-%m-%d' }}">{{ item.date | date: '%b %d, %Y' }}</time>
+            <p>{{ item.text | escape }}{% if item.url %} <a href="{{ item.url | escape }}">{{ item.link_label | default: 'Read more' | escape }} <span aria-hidden="true">↗</span></a>{% endif %}</p>
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p class="news-empty">No news yet.</p>
+  {% endif %}
 </section>
