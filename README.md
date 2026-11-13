@@ -1,3 +1,7 @@
+## 发布主页新闻
+
+打开 [Publish news](https://github.com/zhaoyuchinese/zhaoyuchinese.github.io/actions/workflows/publish-news.yml)，点击 **Run workflow**，填写标题、正文和类别，再点击运行。日期和 HTTPS 链接可选，日期留空时使用北京时间当天。类别会决定新闻图标。发布后可在 [主页 News](https://zhaoyuchinese.github.io/#news-heading) 查看。
+
 A Github Pages template for academic websites. This was forked (then detached) by [Stuart Geiger](https://github.com/staeiou) from the [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/), which is © 2016 Michael Rose and released under the MIT License. See LICENSE.md.
 
 I think I've got things running smoothly and fixed some major bugs, but feel free to file issues or make pull requests if you want to improve the generic template / theme.

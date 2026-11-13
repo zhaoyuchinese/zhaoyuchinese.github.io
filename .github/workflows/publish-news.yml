@@ -1,0 +1,70 @@
+name: Publish news
+run-name: "News · ${{ inputs.title }}"
+
+on:
+  workflow_dispatch:
+    inputs:
+      title:
+        description: Headline
+        required: true
+        type: string
+      text:
+        description: News text
+        required: true
+        type: string
+      category:
+        description: Category (sets the icon)
+        required: true
+        type: choice
+        options: [acceptance, publication, talk, award, general]
+        default: general
+      date:
+        description: Date (YYYY-MM-DD; leave blank for today in China)
+        type: string
+      url:
+        description: Optional link (https://)
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    if: github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+      actions: write
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: master
+      - name: Save news entry
+        env:
+          NEWS_TITLE: ${{ inputs.title }}
+          NEWS_TEXT: ${{ inputs.text }}
+          NEWS_CATEGORY: ${{ inputs.category }}
+          NEWS_DATE: ${{ inputs.date }}
+          NEWS_URL: ${{ inputs.url }}
+        run: python3 scripts/save_news.py
+      - name: Commit news entry
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- "_data/news_entries/${GITHUB_RUN_ID}.json"
+          if ! git diff --cached --quiet; then
+            git commit -m 'Publish news entry'
+          fi
+          for attempt in 1 2 3; do
+            git pull --rebase origin master
+            if git push origin HEAD:master; then
+              exit 0
+            fi
+            sleep "$attempt"
+          done
+          exit 1
+      - name: Deploy website
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run publish.yml --ref master
