@@ -1,6 +1,6 @@
 ## 发布主页新闻
 
-打开 [首页管理员入口](https://zhaoyuchinese.github.io/#news-admin)，使用 `zhaoyuchinese` 的 GitHub 细粒度访问令牌验证身份。创建令牌时，只选择 `zhaoyuchinese.github.io` 仓库，为 Actions 授予读写权限。验证后，首页 News 旁会显示 **发布新闻**，同一次打开页面期间可连续发稿。令牌只保留在页面内存中。
+打开 [新闻管理入口](https://zhaoyuchinese.github.io/admin/)，使用 `zhaoyuchinese` 的 GitHub 细粒度访问令牌验证身份。创建令牌时，只选择 `zhaoyuchinese.github.io` 仓库，为 Actions 授予读写权限。验证后，首页 News 旁会显示 **发布新闻**，同一次打开页面期间可连续发稿。令牌只保留在页面内存中。
 
 选择新闻模板并填写对应字段，点击 **生成预览**。可直接修改生成的标题和正文，再点击 **发布新闻**。日期留空时使用北京时间当天。点 **查看发布进度** 可打开 GitHub 工作流。
 
