@@ -1,5 +1,5 @@
 name: Publish news
-run-name: "News · ${{ inputs.title }}"
+run-name: "Publish news"
 
 on:
   workflow_dispatch:
@@ -16,7 +16,7 @@ on:
         description: Category (sets the icon)
         required: true
         type: choice
-        options: [acceptance, publication, talk, award, general]
+        options: [journal, conference, funding, preprint, talk, award, service, collaboration, release, team, teaching, general, acceptance, publication]
         default: general
       date:
         description: Date (YYYY-MM-DD; leave blank for today in China)
@@ -24,13 +24,17 @@ on:
       url:
         description: Optional link (https://)
         type: string
+      preview_only:
+        description: Validate inputs without publishing
+        type: boolean
+        default: false
 
 permissions:
   contents: read
 
 jobs:
   publish:
-    if: github.ref == 'refs/heads/master'
+    if: github.ref == 'refs/heads/master' && github.actor_id == '48511071'
     runs-on: ubuntu-latest
     timeout-minutes: 5
     permissions:
@@ -49,6 +53,7 @@ jobs:
           NEWS_URL: ${{ inputs.url }}
         run: python3 scripts/save_news.py
       - name: Commit news entry
+        if: "!inputs.preview_only"
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
@@ -65,6 +70,7 @@ jobs:
           done
           exit 1
       - name: Deploy website
+        if: "!inputs.preview_only"
         env:
           GH_TOKEN: ${{ github.token }}
         run: gh workflow run publish.yml --ref master

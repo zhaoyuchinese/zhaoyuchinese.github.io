@@ -1,0 +1,38 @@
+<dialog class="news-editor" id="news-editor" aria-labelledby="news-editor-title" lang="zh-CN">
+  <div class="news-editor-header">
+    <h2 id="news-editor-title">新闻管理</h2>
+    <form method="dialog"><button class="news-editor-close" aria-label="关闭">×</button></form>
+  </div>
+  <form id="news-admin-login" autocomplete="off">
+    <label>GitHub 访问令牌
+      <input type="password" name="token" autocomplete="off" required autofocus>
+    </label>
+    <p class="news-editor-hint">首次使用时创建仅限此仓库的令牌，为 Actions 选择读写权限。令牌仅用于当前页面会话。 <a href="https://github.com/settings/personal-access-tokens/new?name=Academic+site+news&amp;target_name=zhaoyuchinese&amp;actions=write" target="_blank" rel="noopener">创建 GitHub 令牌 ↗</a></p>
+    <button class="news-editor-primary" type="submit">验证管理员身份</button>
+  </form>
+  <form id="news-admin-compose" hidden>
+    <div id="news-template-step">
+      <label>新闻模板 <select name="category"></select></label>
+      <div id="news-template-fields" class="news-editor-fields"></div>
+      <label>补充内容（可选） <textarea name="details" rows="3" maxlength="3000"></textarea></label>
+      <div class="news-editor-fields">
+        <label>新闻日期（可选） <input type="date" name="date"></label>
+        <label>相关链接（可选） <input type="url" name="url" placeholder="https://…"></label>
+      </div>
+      <p class="news-editor-hint">日期留空时使用北京时间当天。</p>
+      <button class="news-editor-primary" type="button" id="news-preview-button">生成预览</button>
+    </div>
+    <div id="news-review-step" hidden>
+      <p class="news-editor-hint">确认标题和正文。你可以直接修改，提交后会发布到首页。</p>
+      <label>标题 <input type="text" name="headline" maxlength="180" disabled required></label>
+      <label>正文 <textarea name="body" rows="5" maxlength="4000" disabled required></textarea></label>
+      <div class="news-editor-buttons">
+        <button type="button" id="news-edit-button">返回模板</button>
+        <button class="news-editor-primary" type="submit">发布新闻</button>
+      </div>
+    </div>
+  </form>
+  <p class="news-editor-status" id="news-editor-status" role="status"></p>
+  <a id="news-run-link" hidden target="_blank" rel="noopener">查看发布进度 ↗</a>
+</dialog>
+<script src="{{ '/assets/js/news-admin.js' | relative_url }}" defer></script>

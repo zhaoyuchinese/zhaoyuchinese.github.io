@@ -19,7 +19,10 @@ redirect_from:
 </header>
 
 <section class="news-section" aria-labelledby="news-heading">
-  <h2 id="news-heading"><i class="fas fa-bolt" aria-hidden="true"></i> News</h2>
+  <div class="news-heading-row">
+    <h2 id="news-heading"><i class="fas fa-bolt" aria-hidden="true"></i> News</h2>
+    <div id="news-admin-actions" hidden></div>
+  </div>
   {% assign news = site.data.news %}
   {% for entry in site.data.news_entries %}
     {% assign news = news | push: entry[1] %}
@@ -31,8 +34,17 @@ redirect_from:
         {% case item.type %}
           {% when 'acceptance' %}{% assign icon = 'fa-check-circle' %}{% assign label = 'Paper accepted' %}
           {% when 'publication' %}{% assign icon = 'fa-book-open' %}{% assign label = 'Publication' %}
+          {% when 'journal' %}{% assign icon = 'fa-file-alt' %}{% assign label = 'Journal' %}
+          {% when 'conference' %}{% assign icon = 'fa-users' %}{% assign label = 'Conference' %}
+          {% when 'funding' %}{% assign icon = 'fa-hand-holding-usd' %}{% assign label = 'Funding' %}
+          {% when 'preprint' %}{% assign icon = 'fa-file-upload' %}{% assign label = 'Preprint' %}
           {% when 'talk' %}{% assign icon = 'fa-microphone' %}{% assign label = 'Talk' %}
           {% when 'award' %}{% assign icon = 'fa-trophy' %}{% assign label = 'Award' %}
+          {% when 'service' %}{% assign icon = 'fa-tasks' %}{% assign label = 'Academic service' %}
+          {% when 'collaboration' %}{% assign icon = 'fa-handshake' %}{% assign label = 'Collaboration' %}
+          {% when 'release' %}{% assign icon = 'fa-code' %}{% assign label = 'Code or data' %}
+          {% when 'team' %}{% assign icon = 'fa-user-plus' %}{% assign label = 'Team' %}
+          {% when 'teaching' %}{% assign icon = 'fa-graduation-cap' %}{% assign label = 'Teaching' %}
           {% else %}{% assign icon = 'fa-bullhorn' %}{% assign label = 'Announcement' %}
         {% endcase %}
         <li class="news-item" data-type="{{ item.type | escape }}">
@@ -53,3 +65,5 @@ redirect_from:
     <p class="news-empty">No news yet.</p>
   {% endif %}
 </section>
+
+{% include news-admin.html %}
