@@ -1,6 +1,9 @@
 ---
 title: "SOQ: Structural Reinforcement Learning for Constrained Delay Minimization with Channel State Information"
 collection: publications
+kind: "journal-article"
+authors: ["Yu Zhao", "Yeongjin Kim", "Joohyun Lee"]
+doi: "10.1109/jiot.2023.3299598"
 permalink: /publication/2023-07-25-paper-title-number
 date: 2023-07-25
 venue: 'IEEE Internet of Things Journal'

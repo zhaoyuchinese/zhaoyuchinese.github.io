@@ -1,6 +1,9 @@
 ---
 title: "Multi-Agent Reinforcement Learning for a Multichannel Uplink Random Access: Congestion Game Perspective"
 collection: publications
+kind: "conference-paper"
+authors: ["Yu Zhao", "Joohyun Lee", "Jun-Bae Seo"]
+doi: "10.1109/icast57874.2023.10359301"
 permalink: /publication/2023-12-27-paper-title-number
 date: 2023-12-27
 venue: '2023 12th International Conference on Awareness Science and Technology (iCAST)'

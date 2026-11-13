@@ -1,6 +1,9 @@
 ---
 title: "Structure-Aware Reinforcement Learning for Energy-Constrained Background Update Scheduling"
 collection: publications
+kind: "conference-paper"
+authors: ["Ruoyu Zhu", "Yu Zhao", "Victor C. M. Leung", "Joohyun Lee"]
+doi: "10.1109/secon68281.2026.11579135"
 permalink: /publication/2026-06-01-paper-title-number
 date: 2026-06-01
 venue: '2026 22nd Annual IEEE International Conference on Sensing, Communication, and Networking (SECON)'

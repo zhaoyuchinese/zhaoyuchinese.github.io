@@ -1,6 +1,8 @@
 ---
 title: "다중 안테나 기술에서의 딥러닝 기반 직교 진폭 변조 디코더"
 collection: publications
+kind: "conference-paper"
+authors: ["이동우", "자오유", "이주현"]
 permalink: /publication/2021-02-28-paper-title-number-5
 date: 2021-02-28
 venue: '한국통신학회 학술대회논문집'

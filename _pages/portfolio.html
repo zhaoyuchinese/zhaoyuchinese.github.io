@@ -1,14 +1,21 @@
 ---
-layout: archive
+layout: academic
 title: "Portfolio"
 permalink: /portfolio/
-author_profile: true
 ---
-
-{% include base_path %}
-
-
-{% for post in site.portfolio %}
-  {% include archive-single.html %}
-{% endfor %}
-
+<header class="academic-intro">
+  <h1>Portfolio</h1>
+  <p class="academic-deck">Travel photography</p>
+</header>
+<div class="academic-gallery">
+  {% assign photographs = site.portfolio | sort: 'title' | reverse %}
+  {% for post in photographs %}
+    {% assign image = post.excerpt | split: "src='" | last | split: "'" | first %}
+    <figure>
+      <a href="{{ image | relative_url }}">
+        <img src="{{ image | relative_url }}" alt="{{ post.title | escape }}" loading="lazy">
+      </a>
+      <figcaption>{{ post.title | escape }}</figcaption>
+    </figure>
+  {% endfor %}
+</div>

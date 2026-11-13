@@ -1,6 +1,9 @@
 ---
 title: "Q-greedyUCB: A new exploration policy to learn resource-efficient scheduling"
 collection: publications
+kind: "journal-article"
+authors: ["Yu Zhao", "Joohyun Lee", "Wei Chen"]
+doi: "10.23919/jcc.2021.06.002"
 permalink: /publication/2021-06-17-paper-title-number-2
 date: 2021-06-17
 venue: 'China Communications'

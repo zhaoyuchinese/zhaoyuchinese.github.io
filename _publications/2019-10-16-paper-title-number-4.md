@@ -1,6 +1,9 @@
 ---
 title: "A reinforcement learning based low-delay scheduling with adaptive transmission"
 collection: publications
+kind: "conference-paper"
+authors: ["Yu Zhao", "Joohyun Lee"]
+doi: "10.1109/ictc46691.2019.8939680"
 permalink: /publication/2019-10-16-paper-title-number-4
 date: 2019-10-16
 venue: '2019 International Conference on Information and Communication Technology Convergence (ICTC)'

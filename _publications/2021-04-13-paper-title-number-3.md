@@ -1,6 +1,9 @@
 ---
 title: "Reinforcement Learning for Random Access in Multi-cell Networks"
 collection: publications
+kind: "conference-paper"
+authors: ["Dongwoo Lee", "Yu Zhao", "Joohyun Lee"]
+doi: "10.1109/icaiic51459.2021.9415281"
 permalink: /publication/2021-04-13-paper-title-number-3
 date: 2021-04-13
 venue: '2021 International Conference on Artificial Intelligence in Information and Communication (ICAIIC)'

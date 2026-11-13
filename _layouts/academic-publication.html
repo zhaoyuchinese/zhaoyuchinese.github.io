@@ -1,0 +1,18 @@
+---
+layout: academic
+---
+<header class="academic-intro paper-detail">
+  <a class="paper-back" href="{{ '/publications/' | relative_url }}">← All publications</a>
+  <h1>{{ page.title | escape }}</h1>
+</header>
+{% if page.citation %}
+  <div class="academic-cv"><p>{{ page.citation }}</p></div>
+{% elsif page.authors %}
+  <p class="paper-authors">{{ page.authors | join: ', ' | escape }}</p>
+  <p class="paper-venue">{{ page.venue | escape }} · {{ page.date | date: '%Y' }}</p>
+{% endif %}
+<div class="paper-links">
+  {% if page.doi %}<a href="https://doi.org/{{ page.doi | escape }}">View publication <span aria-hidden="true">↗</span></a>
+  {% elsif page.link %}<a href="{{ page.link | escape }}">View publication <span aria-hidden="true">↗</span></a>{% endif %}
+</div>
+<div class="academic-cv">{{ content }}</div>

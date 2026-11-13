@@ -10,7 +10,7 @@ locale                   : "en-US"
 title                    : "Yu Zhao"
 title_separator          : "-"
 name                     : &name "Yu Zhao"
-description              : &description "I am I"
+description              : &description "Yu Zhao’s research in reinforcement learning, wireless networks, and the Internet of Things."
 url                      : https://zhaoyuchinese.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "zhaoyuchinese/zhaoyuchinese.github.io"
@@ -82,13 +82,13 @@ analytics:
 author:
   name             : "Yu Zhao"
   avatar           : "zhaoyu.jpg"
-  bio              : "small-town swot"
+  bio              : "College of Artificial Intelligence"
   location         : 
-  employer         :
+  employer         : "Tianjin University of Science and Technology"
   pubmed           : 
   googlescholar    : "https://scholar.google.com/citations?user=gcSJnzwAAAAJ&hl=zh-CN"
   email            : "yuzhao@tust.edu.cn"
-  researchgate     :  "https://www.researchgate.net/profile/Yu-Zhao-127"# example: "https://www.researchgate.net/profile/yourprofile"
+  researchgate     : "https://www.researchgate.net/profile/Yu-Zhao-127"
   uri              :
   bitbucket        :
   codepen          :
@@ -103,7 +103,7 @@ author:
   impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
   linkedin         :
-  orcid            : "http://orcid.org/0000-0003-2235-8807"
+  orcid            : "https://orcid.org/0000-0003-2235-8807"
   pinterest        :
   soundcloud       :
   stackoverflow    : # http://stackoverflow.com/users/123456/username
@@ -144,6 +144,7 @@ exclude:
   - log
   - node_modules
   - package.json
+  - scripts
   - tmp
   - vendor
 keep_files:
@@ -223,10 +224,7 @@ defaults:
       path: ""
       type: publications
     values:
-      layout: single
-      author_profile: true
-      share: true
-      comments: true
+      layout: academic-publication
   # _portfolio
   - scope:
       path: ""

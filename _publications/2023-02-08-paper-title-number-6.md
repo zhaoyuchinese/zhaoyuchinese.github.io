@@ -1,6 +1,8 @@
 ---
 title: "NOMA-based Random Access: Multi-Agent Reinforcement Learning Method"
 collection: publications
+kind: "conference-paper"
+authors: ["자오유", "서준배", "이주현"]
 permalink: /publication/2023-02-08-paper-title-number-6
 date: 2023-02-08
 venue: '한국통신학회 학술대회논문집'

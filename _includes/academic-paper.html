@@ -1,0 +1,30 @@
+{% assign paper = include.paper %}
+<article class="academic-paper" data-paper data-kind="{{ paper.kind | escape }}">
+  <p class="paper-venue">
+    {% if paper.venue %}{{ paper.venue | escape }}{% endif %}
+    {% if include.show_year %}<span>{{ paper.date | date: '%Y' }}</span>{% endif %}
+  </p>
+  <{{ include.heading | default: 'h3' }} class="paper-title">
+    <a href="{% if paper.doi %}https://doi.org/{{ paper.doi | escape }}{% elsif paper.link %}{{ paper.link | escape }}{% else %}{{ paper.url | relative_url }}{% endif %}">{{ paper.title | escape }}</a>
+  </{{ include.heading | default: 'h3' }}>
+  {% if paper.authors %}
+    <p class="paper-authors">
+      {%- for author in paper.authors -%}
+        {%- assign name = author | remove: '*' -%}
+        {%- if name == 'Yu Zhao' or name == 'Zhao Yu' or name == '자오유' or name == '赵宇' -%}
+          <strong>{{ author | escape }}</strong>
+        {%- else -%}
+          {{ author | escape }}
+        {%- endif -%}
+        {%- unless forloop.last %},{{ ' ' }}{% endunless -%}
+      {%- endfor -%}
+    </p>
+  {% endif %}
+  {% unless include.compact %}
+    <div class="paper-links">
+      {% if paper.doi %}<a href="https://doi.org/{{ paper.doi | escape }}">DOI <span aria-hidden="true">↗</span></a>
+      {% elsif paper.link %}<a href="{{ paper.link | escape }}">Publisher <span aria-hidden="true">↗</span></a>{% endif %}
+      <a href="{{ paper.url | relative_url }}">Details</a>
+    </div>
+  {% endunless %}
+</article>

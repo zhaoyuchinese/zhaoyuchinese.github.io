@@ -1,0 +1,48 @@
+---
+layout: academic
+title: "Publications"
+excerpt: "Journal articles, conference papers, and book chapters by Yu Zhao."
+permalink: /publications/
+---
+<header class="academic-intro publications-intro">
+  <h1>Publications</h1>
+  <p class="academic-deck">Journal articles, conference papers, and book chapters</p>
+</header>
+
+<form class="paper-filters" role="search" aria-label="Filter publications" hidden>
+  <label class="paper-search">
+    <span>Search publications</span>
+    <input type="search" name="query" placeholder="Title, author, or venue" autocomplete="off">
+  </label>
+  <label>
+    <span>Type</span>
+    <select name="kind">
+      <option value="">All types</option>
+      <option value="journal-article">Journal article</option>
+      <option value="conference-paper">Conference paper</option>
+      <option value="book-chapter">Book chapter</option>
+    </select>
+  </label>
+</form>
+
+<div class="paper-summary">
+  <span class="paper-count" role="status">{{ site.publications.size }} publications</span>
+  <span>* Corresponding author or co-first author</span>
+</div>
+
+{% assign papers = site.publications | sort: 'date' | reverse %}
+{% assign previous_year = '' %}
+{% for paper in papers %}
+  {% assign year = paper.date | date: '%Y' %}
+  {% if year != previous_year %}
+    {% unless forloop.first %}</div></section>{% endunless %}
+    <section class="paper-year" aria-labelledby="year-{{ year }}">
+      <h2 id="year-{{ year }}">{{ year }}</h2>
+      <div class="paper-year-list">
+    {% assign previous_year = year %}
+  {% endif %}
+  {% include academic-paper.html paper=paper %}
+  {% if forloop.last %}</div></section>{% endif %}
+{% endfor %}
+<p class="paper-empty" hidden>No publications match your search.</p>
+<script src="{{ '/assets/js/publications.js' | relative_url }}" defer></script>

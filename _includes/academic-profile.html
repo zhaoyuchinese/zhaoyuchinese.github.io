@@ -1,0 +1,14 @@
+<aside class="academic-profile" aria-label="Researcher profile">
+  <a class="academic-portrait" href="{{ '/' | relative_url }}">
+    <img src="{{ site.author.avatar | prepend: '/images/' | relative_url }}" alt="Portrait of {{ site.author.name | escape }}">
+  </a>
+  <p class="academic-name"><a href="{{ '/' | relative_url }}">{{ site.author.name | escape }} <span lang="zh">赵宇</span></a></p>
+  <p class="academic-affiliation">{{ site.author.bio | escape }}<br>{{ site.author.employer | escape }}</p>
+  <ul class="academic-contact">
+    <li><a href="mailto:{{ site.author.email }}">Email <span aria-hidden="true">↗</span></a></li>
+    <li><a href="{{ site.author.googlescholar | escape }}">Google Scholar <span aria-hidden="true">↗</span></a></li>
+    <li><a href="{{ site.author.orcid | escape }}">ORCID <span aria-hidden="true">↗</span></a></li>
+    <li><a href="{{ site.author.researchgate | escape }}">ResearchGate <span aria-hidden="true">↗</span></a></li>
+    <li><a href="{{ '/cv/' | relative_url }}">Curriculum vitae <span aria-hidden="true">→</span></a></li>
+  </ul>
+</aside>
